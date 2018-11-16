@@ -4,11 +4,10 @@ namespace Financial\Tests\Calculator;
 
 use Financial\Calculator\APR;
 use Financial\Math\NewtonRaphsonMethod;
-use Financial\Model\AbsCreditDefinition;
 use Financial\Model\CreditDefinitionEqualInstallments;
 use Financial\Model\Investment;
+use Financial\Model\InvestmentInterface;
 use Financial\Util\Calendar;
-
 
 /**
  * @coversDefaultClass  Financial\Calculator\APR
@@ -31,13 +30,13 @@ class APRTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Investment $investment
+     * @param InvestmentInterface $investment
      *
      * @test
      * @covers ::calculate
      * @dataProvider investmentDataProvider
      */
-    public function testCalculate(Investment $investment, $expectedResult)
+    public function testCalculate(InvestmentInterface $investment, $expectedResult)
     {
         $aprCalculator = new APR(new NewtonRaphsonMethod());
         $this->assertSame($expectedResult, round($aprCalculator->calculate($investment), 2));

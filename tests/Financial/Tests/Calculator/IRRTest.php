@@ -7,6 +7,7 @@ use Financial\Calculator\IRR;
 use Financial\Math\NewtonRaphsonMethod;
 use Financial\Model\CreditDefinitionEqualInstallments;
 use Financial\Model\Investment;
+use Financial\Model\InvestmentInterface;
 use Financial\Util\Calendar;
 
 /**
@@ -28,13 +29,13 @@ class IRRTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Investment $investment
+     * @param InvestmentInterface $investment
      *
      * @test
      * @covers ::calculate
      * @dataProvider investmentDataProvider
      */
-    public function testCalculate(Investment $investment, $expectedResult)
+    public function testCalculate(InvestmentInterface $investment, $expectedResult)
     {
         $irrCalculator = new IRR(new NewtonRaphsonMethod());
         $this->assertSame($expectedResult, round($irrCalculator->calculate($investment), 2));

@@ -3,7 +3,10 @@
 
 namespace Financial\Model;
 
-
+/**
+ * Class CashFlowEntity
+ * @package Financial\Model
+ */
 class CashFlowEntity
 {
     const TYPE_INVESTMENT = 1;
@@ -24,6 +27,12 @@ class CashFlowEntity
      */
     private $dayOffset;
 
+    /**
+     * CashFlowEntity constructor.
+     * @param float $type
+     * @param float $value
+     * @param int   $dayOffset
+     */
     public function __construct($type, $value, $dayOffset)
     {
         $this->type = $type;
@@ -54,5 +63,4 @@ class CashFlowEntity
     {
         return $this->value;
     }
-
 }

@@ -3,9 +3,12 @@
 
 namespace Financial\Model;
 
-
-interface Investment {
-
+/**
+ * Interface InvestmentInterface
+ * @package Financial\Model
+ */
+interface InvestmentInterface
+{
     /**
      * @return CashFlowEntity[]
      */

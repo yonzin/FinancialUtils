@@ -2,6 +2,10 @@
 
 namespace Financial\Util;
 
+/**
+ * Class Calendar
+ * @package Financial\Util
+ */
 class Calendar
 {
     const DAY_OF_YEAR = 365;
@@ -19,6 +23,7 @@ class Calendar
      * @param int $frequency
      *
      * @return float
+     *
      * @throws \RuntimeException
      */
     public function getYearEventsByFrequency($frequency)
@@ -33,7 +38,7 @@ class Calendar
             case Calendar::FREQUENCY_YEAR:
                 return 1;
             default:
-                throw new \RuntimeException('Frequency type not known '.$frequency);
+                throw new \RuntimeException(sprintf('Frequency type not known %s', $frequency));
         }
     }
 
@@ -41,6 +46,7 @@ class Calendar
      * @param int $frequency
      *
      * @return float
+     *
      * @throws \RuntimeException
      */
     public function getDaysByFrequency($frequency)
@@ -55,8 +61,7 @@ class Calendar
             case Calendar::FREQUENCY_YEAR:
                 return Calendar::DAY_OF_YEAR;
             default:
-                throw new \RuntimeException('Frequency type not known '.$frequency);
+                throw new \RuntimeException(sprintf('Frequency type not known %s', $frequency));
         }
     }
-
 }

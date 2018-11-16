@@ -4,6 +4,10 @@ namespace Financial\Math;
 
 use Financial\Util\FunctionCall;
 
+/**
+ * Class NewtonRaphsonMethod
+ * @package Financial\Math
+ */
 class NewtonRaphsonMethod {
 
     const PRECISE = 0.0000001;
@@ -16,6 +20,8 @@ class NewtonRaphsonMethod {
      * @param FunctionCall $fx
      * @param FunctionCall $dx
      * @param float        $initArgument - x_0
+     *
+     * @return float|int
      */
     public function calculate(FunctionCall $fx, FunctionCall $dx, $initArgument)
     {
@@ -39,7 +45,7 @@ class NewtonRaphsonMethod {
 
             $currentArgument = $nextArgument;
         }
+
         return $currentArgument;
     }
-
 }

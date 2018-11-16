@@ -4,7 +4,12 @@ namespace Financial\Model;
 
 use Financial\Util\Calendar;
 
-abstract class AbsCreditDefinition implements Investment{
+/**
+ * Class AbstractCreditDefinition
+ * @package Financial\Model
+ */
+abstract class AbstractCreditDefinition implements InvestmentInterface
+{
     protected $commission = 0;
     protected $percentageRate = 0;
     protected $borrowedAmount = 0;

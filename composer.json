@@ -15,7 +15,6 @@
         "vendor-dir": "vendor/",
         "bin-dir": "bin"
     },
-    "minimum-stability" : "dev",
     "authors": [
         {
             "name": "Tomasz Ziółkowski",
